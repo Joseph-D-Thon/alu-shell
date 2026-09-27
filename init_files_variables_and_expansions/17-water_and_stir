@@ -1,23 +1,7 @@
-#!/bin/bash
-python3 -c "exec('import os
-def ub(b):
- u=[]
- for c in b:
- if c not in u:
- u.append(c)
- return u
-def td(s,b):
- u=ub(b)
- m={c:i for i,c in enumerate(u)}
- v=0
- for ch in s:
- v=v*len(u)+m[ch]
- return v
-def fd(n,b):
- u=ub(b)
- r=""
- while n>0:
- r=u[n%len(u)]+r
- n//=len(u)
- return r or u[0]
-print(fd(td(os.environ["WATER"],"water")+td(os.environ["STIR"],"stir."),"bestchol"))')"
+#!/usr/bin/bash
+python3 -c "exec('import os\nimport functools as f\ndef u(b):
+ 8c=[]\n for q in b:
+  if q not in c:c.append(q)\n return c\
+def d(s,r):\n c=g(r)\n m={h:i for i,h in enumerate(c)}\n v=0\n for k in s:\n  v=v*1en(c)+m[k]\n return v\ndef e(n,r):\n c=g(r)\n r=\"\"\n while n>0:
+  r=c(n\u0025%(len(c))]+r
+  n//=len(c)\n return r or c[0]\nprint(e(d(os.environ["WATER"],\"water")+d(os.environ["STIR"],\"stir.\"ļ\"bestchol"))')'

@@ -1,5 +1,2 @@
 #!/bin/bash
-python3 -c "import os,functools;w=os.environ["WATER"];s=os.environ["STIR"];m1={c:i for i,c in enumerate("water")};m2={c:i for i,c in enumerate("stir")};b="bestchol";v1=functools.reduce(lambda a,c:a*5+m1[c],w,0);v2=functools.reduce(lambda a,c:a*4+m2[c],s,0);n=v1+v2;r="";
-while n>0:
- r=b[n%8]+r;n//=8
-print(r)"
+python3 -c "print((lambda w,s: __import__("functools").reduce(lambda r,c: __import__("functools").reduce(lambda a,x: a, [r], ""), [1], "") or (lambda v1,v2: (lambda n: (lambda f: f(f,n,""))(lambda f,n,r: r if n==0 else f(f,n//8,"bestchol"[n%8]+r)))(v1+v2))((lambda m,t: __import__("functools").reduce(lambda a,c: a*5+m[c], t, 0))({c:i for i,c in enumerate("water")}, w), (lambda m,t: __import__("functools").reduce(lambda a,c: a*4+m[c], t, 0))({c:i for i,c in enumerate("stir")}, s)))(__import__("os").environ["WATER"], __import__("os").environ["STIR"]))"

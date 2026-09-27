@@ -1,3 +1,21 @@
 #!/bin/bash
-echo $((5#$(echo $WATER | tr water 01234)+4#$(echo $STIR | tr stir 0123))) | xargs -I{} echo -e "obase=8
-{}" | bc | tr 01234567 bestchol
+python3 -c "
+import os
+w=os.getenv('WATER','')
+s=os.getenv('STIR','')
+m1={c:i for i,c in enumerate('water')}
+m2={c:i for i,c in enumerate('stir')}
+b='bestchol'
+v1=0
+for c in w:
+ v1=v1*5+m1[c]
+v2=0
+for c in s:
+ v2=v2*4+m2[c]
+n=v1+v2
+r=''
+while n>0:
+ r=b[n%8]+r
+ n//=8
+print(r)
+"

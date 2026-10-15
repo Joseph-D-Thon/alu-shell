@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Displays content of current dir, only part after first dash
+for file in *
+do
+	echo "$file" | cut -d '-' -f2-
+done
